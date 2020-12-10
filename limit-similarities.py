@@ -2,6 +2,9 @@
 
 # First Solution (using nested loop)
 def limit_consecutive_characters(input_str, max_consec_chars):
+  if type(input_str) != str:
+    return input_str
+
   result = ''
   
   for char in input_str: # O(n)
@@ -14,6 +17,9 @@ def limit_consecutive_characters(input_str, max_consec_chars):
 
 # Second Solution (not using nested loop)
 def limit_consecutive_characters_2(input_str, max_consec_chars):
+  if type(input_str) != str:
+    return input_str
+    
   result = ''
   last_consecutive_character = None
   consecutive_characters_counter = 0
@@ -35,6 +41,8 @@ if __name__ == '__main__':
   print(limit_consecutive_characters('aaab', 2)) # should output: aab
   print(limit_consecutive_characters('aabb', 1)) # should output: ab
   print(limit_consecutive_characters('aabbaa', 1)) # should output: aba
+  print(limit_consecutive_characters(None, 1)) # should output: None
+  print(limit_consecutive_characters(334, 1)) # should output: 334
 
   # second solution's test
   print(limit_consecutive_characters_2('', 3)) # should output: empty string
